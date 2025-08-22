@@ -1,0 +1,38 @@
+### Instalacion de Node.JS en tu computadora
+
+    ## ¿Qué lo hace especial?
+        # Multiplataforma, rápido y eficiente.
+        # Usa un modelo de bucle de eventos no bloqueante.
+        # Ideal para aplicaciones en tiempo real, IoT, APIs y herramientas de desarrollo.
+
+    ## ¿Por qué aprender Node.js?
+        # Reutilizas tus conocimientos de JavaScript.
+        # Tiene un enorme ecosistema NPM (Node Package Manager).
+        # Es usado por empresas como Spotify, eBay y LinkedIn.
+    
+    ## Áreas donde destaca:
+        # APIs REST
+        # Streaming
+        # Chatbots
+        # Aplicaciones en tiempo real
+        # Automatización y herramientas para frontend
+
+
+### Gestion de Multiples Versiones de Node.js con NVM (Node Version Manager)
+
+    ##  ¿Por qué usar varias versiones de Node.js?
+        # Algunos proyectos requieren versiones específicas
+        # Permite mantener compatibilidad, probar nuevas funciones y trabajar en múltiples entornos sin conflictos.
+    
+    ##  Tipos de versiones de Node.js
+        # Current: últimas funciones (riesgo mayor).
+        # LTS (Long Term Support): más estable y recomendada para producción.
+        # Maintenance: solo recibe parches de seguridad.
+
+    ## Instalar (https://nodejs.org/es/download)
+
+        # Comandos desde la terminal
+            # pm -v    # Verifica versión de npm
+            # node -v  # Verifica la versión de Node.js
+            # nvm install 22 # Instala la version 22
+            # nvm use 23 # Para cambiar la version que se esta usando en este caso la version 23.

@@ -1,0 +1,418 @@
+
+###  Roles del Desarrollo Backend
+
+    ## Tu rol principal como Backend Developer va ser escribir código que tengan que ver con:
+
+        # Reglas de negocio
+        # Validacion
+        # Autorizacion de usuarios
+        # Conexiones a bases de datos
+        # Codigo que correra del lado del servidor.
+    
+    ## El Backend developer también puede estár acercado a otro tipo de roles como:
+
+        # DB ADMIN: Gestiona una base de datos, sus políticas y como vamos a disponer de esa DB a través del código y la seguridad que estas deberian tener.
+        
+        # SERVER ADMIN: Se encarga de gestionar la seguridad en los servidores que es donde corre el código a disposición.
+
+
+### Frontend, Backend y Full Stack
+
+    ## Frontend (Cliente):  Se enfoca en la parte del renderizado y lo que se muestra al cliente. Clientes mas populares:
+
+        # Navegadores: hacen solicitudes HTML o pueden enviar datos y soportan;
+
+            # HTML --> Markdown
+            # CS --> Tailwind, Bootstrap, Foundation
+            # JS --> React, Angular , Vue
+        
+        # APP mobile: Pueden ser de android o iOS, q se conectan a un servicio de backend para solicitar datos y luego renderizarlo. Soportan:
+
+            # iOS --> Swift, Objetive C
+            # Android --> Kotlin, JAVA
+            # Cross Plataform --> React Native, Flutter, .NET MAUI
+        
+        # IOT(Internet Of Things):  Podemos conectar dispositivos que envíen datos a un SV para luego visualizarlo
+
+    ## Backend (Server): Se enfoca en desarrollar servicios que se conectan a un frontend o sea un cliente a través de una API (application programming interface). Existen 
+                         múltiples lenguajes de programación con su respectivo framework que se utilizan para el desarrollo backend;
+
+        # Python --> Django
+        # JavaScript --> Express.js
+        # TypeScript --> NestJS
+        # Ruby --> Ruby on Rails
+        # PHP --> Laravel
+        # Java --> Spring
+        # Go --> Gin
+        # C# --> .NET
+    
+    ## FullStack developer: Es un dev que desempeña funciones de frontend y backend, pero generalmente tiene una especialidad en la que ejerce una mayor profundidad de conocimiento.
+
+        #  El ingeniero en “forma T” es una analogía que sugiere que el conocimiento del desarrollador debería graficarse en forma de una letra T, puesto que el conocimiento de
+         su especialidad debe alcanzar un mayor nivel de profundidad, mientras que superficialmente entiende otras tecnologías que complementan su punto mas fuerte.
+
+
+### ¿Cómo se construye el backend?
+
+    ##  El frontend y backend trabajan en conjunto, y se valen de múltiples otras herramientas y tecnologías para responder a las solicitudes de los usuarios. 
+
+        # Los usuarios se conectan través del cliente de un dispositivo (ya sea un navegador, dispositivo móvil, etc…).
+
+        # En el listado de solicitudes, cada posible solicitud es conocida como un endpoint.
+
+        # La API (application programming interface) es la encargada de recibir la solicitud y hacerla llegar al backend, a lo que el frontend espera una respuesta.
+
+        # El backend recibe la solicitud y dispara una respuesta con el endpoint correspondiente.
+
+        # Las DB proporciona la info que requiere el backend para satisfacer la solicitud hecha por el cliente.
+
+        # Las librerías son herramientas (piezas de código) pre-fabricadas por otros DEVs, que pueden ser importadas al proyecto para evitar la necesidad de crear código 
+          ya existente (no hay que reinventar la rueda).
+
+        # Los framework son un conjunto de librerías que en conjunto conforman un marco de trabajo utilizado para responder a una necesidad específica existente en un proyecto.
+
+
+### ¿Cómo escoger lenguajes y frameworks para backend?
+
+    ## Los Frameworks son herramientas que nos ayuda a ir más ágil y desarrollar nuestro proyecto en el dia a dia. entre ellos tenemos
+
+        # Python --> Django, Flask, FastAPI
+        # JavaScript --> Express, NextJS
+        # PHP --> Laravel, Symphony
+        # Java --> Spring
+        # Go --> Gin, Fiber, Echo
+        # Rubi --> Ruby Rails
+        # C# --> .NET
+
+    ## La elección de lenguajes y frameworks para backend depende de varios factores:
+
+        # Requerimientos del proyecto: Considera la escalabilidad, rendimiento y características específicas que necesites.
+
+        # Ecosistema: Evalúa la comunidad y soporte disponible. Lenguajes populares como Python, Java y JavaScript tienen extensos recursos.
+
+        # Conocimiento previo: Si ya dominas un lenguaje, es más eficiente elegir un framework asociado a ese lenguaje para evitar la curva de aprendizaje.
+
+        # Tipo de aplicación: Algunas tecnologías son más adecuadas para API REST, microservicios o aplicaciones monolíticas.
+
+        # Integraciones y compatibilidad: Asegúrate de que el lenguaje y framework que elijas se integra bien con tus bases de datos y otros servicios.
+
+        # Investigar y experimentar con diferentes opciones te ayudará a tomar la mejor decisión.
+
+
+### HTTP
+
+    ## La URL de una pagina se compone de: (ejemplo https://platzi.com/cursos)
+
+        # https --> Protocolo La S al final de HTTPS significa security, y es un certificado de seguridad.
+
+        # platzi .com --> Dominio El navegador realiza una petición con un dominio, y el sistema DNS se encarga de resolver dicho dominio para indicarle al 
+                           navegador dónde encontrar el servidor solicitado.
+
+        # cursos  --> Path / endpoint
+    
+    ## Como el usuario hace una petición que llega al servidor
+
+        # El usuario ingresa al navegador o app y hace una solicitud que envía una REQUEST el cual sale con un dominio, el sistema DNS se encarga de encontrar 
+           el servidor, el REQUEST llega al servidor.
+
+        # El servidor envía un RESPONSE a la petición del navegador, esta respuesta puede realizarse en varios formatos:
+
+            # Frontend --> Renderizando la página con HTML, CSS y JavaScript
+
+            # Datos --> También puede enviar datos puros con XML O JSON
+
+    ## Codigos de estado: El protocolo HTTP proporciona códigos de estado, que es información útil para que el solicitante de la petición responda y
+                           se comporte de acuerdo a las necesidades.
+    
+        # Rangos del status code:
+
+            # 1XX = INFO
+                #102 = PROCESSING
+            
+            # 2XX = SUCCESS 
+                # 200 = OK, 201 = CREATED, 204 = NO CONTENT
+
+            # 3XX = REDIRECT
+                # 301 = MOVED, 307 = TEMPORARY, 308 = PERMANENT
+            
+            # 4XX = CLIENT ERROR (frontend)
+                # 401 = CLIENT ERROR, 404 = NOT FOUND, 409 = CONFLICT
+            
+            5XX = SERVER ERROR (backend).
+                # 500 = INTERNAL, 502 = BAD GETEWAY, 504 = GETEWAY TIMEOUT
+        
+        # Los códigos de estado brindan información útil para entender el comportamiento de la petición que se le hace al servidor. en la pagina (https://http.cat/)
+            se pueden ver mas ejemplos de codigos de estado pero con memes de gatos.
+
+
+### Estructura REST API (Representational State Transfer, Application Programming Interface )
+
+    ## API REST es un estandar para desarrollar APIs que funcionan en el protocolo HTTP, cualquier framework que elijas tiene esta implementacion.
+        
+        # A través de los endpoints se le pide información al dominio, por lo general se nos devuelve la información empaquetada en un JSON.
+
+    ## ¿Como funciona?  CRUD es el índice de unas palabras clave, y en el protocolo HTTP tenemos métodos para llevarlas a cabo:
+
+        # Create -->  POST
+        # Read --> GET 
+        # Delete --> DELETE
+        # Update -->  PUT / PATCH
+            # PUT envía la totalidad de los datos, mientras que PATCH envía solo los datos destinados a actualizarse.
+
+    ## Ejemplo de métodos a un endpoint:
+
+       ENDPOINT   |  METHOD  |	BODY    |	RESPONSE    |	STATUS
+        /users	    GET	        N/A	        [ { }, { }…]	200
+        /users/:id	GET	        N/A	        { }	            200
+        /users	    POST	    {…}	        {…}	            201
+        /users/:id	PUT/PATCH	{…}	        {…}	            201
+        /users/:id	DELETE	    N/A	     (true o false)     200
+    
+
+### Insomnia y Postman
+
+    ## Tanto insomina como postman son software para mandar peticiones de http, en el caso de este curso se utiliza la api de platzi
+        # https://fakeapi.platzi.com/en/about/introduction/
+
+
+### La nube
+
+    ## La nube se refiere a una infraestructura de computación que permite el acceso a datos, aplicaciones y servicios a través de Internet, en lugar de depender 
+        de un hardware local. Ofrece escalabilidad, flexibilidad y un modelo de pago por uso. Los proveedores de servicios en la nube ofrecen diferentes modelos 
+        de servicio como IaaS (Infraestructura como Servicio), PaaS (Plataforma como Servicio) y SaaS (Software como Servicio). Esto permite a las empresas y 
+        desarrolladores gestionar recursos de manera más eficiente y rentable.
+
+
+### Devops
+
+    ## Devops significa unir la parte de desarrollo con la parte de operaciones, no es un cargo o una persona, es una cultura que agrupa una serie de prácticas y 
+        principios para mejorar y automatizar los procesos entre los equipos de desarrollo e infraestructura (IT) para hacer el lanzamiento de software de una manera 
+        rápida, eficiente y segura. 
+
+        # Existe un workflow (flujo de trabajo) para hacer que el código trabajado de forma local llegue al servidor y exponer el servicio a miles de usuarios.
+        
+        # Las aplicaciones son expuestas a muchas zonas, potencialmente a todo el mundo.
+        
+        # El request del cliente tiene que estar lo más cerca posible al data center para reducir la latencia, y por ende, el tiempo de respuesta.
+
+        # Git es un sistema atómico de control de versiones utilizado para crear repositorios de código. Github es un servicio de repositorios remotos.
+
+        # Centralizamos nuestro código en un repositorio remoto (Github), al que los miembros del equipo de desarrollo equipo aportarán el código. La rama principal
+            (main) tiene todo el código que debe cumplir estándares a través de pruebas, calidad y seguridad.
+
+        # Se denomina automation al rol de los desarrolladores que se encargan de realizar las automatizaciones para hacer las verificaciones en el código.
+
+        # El servidor de repositorios nos ayuda a reunir desarrollo y operaciones; el repositorio remoto se conecta con la nube, ambos se comunican, y si cumplen con 
+            las pruebas, calidad y seguridad, se despliega la app y nos conectamos a esos servidores.
+
+        # Así el equipo de desarrollo puede lanzar rápidamente y operar el código en producción, normalmente después se vuelve un flujo y este flujo es la cultura 
+            de trabajo conocida como DevOps:
+            
+            # Plan (planificación).
+            # Code (código).
+            # Build (construcción)
+            # Test (pruebas).
+            # Release (lanzamiento).
+            # Deploy (despliegue).
+            # Operate (operar).
+            # Monitor (monitorear).
+            
+
+### Servidor 
+
+    ## SaaS (Software as a Service)
+        # Es un modelo de distribución de software en el que el proveedor ofrece el software como un servicio a través de internet. Los usuarios acceden al software a
+             través de un navegador web o a través de una aplicación cliente y no tienen que preocuparse por la instalación ni por la actualización del software.
+              Ejemplos de SaaS son servicios como Gmail, Slack y Google Drive.
+
+    ## PaaS (Platform as a Service) 
+        # Es un modelo de distribución de software en el que el proveedor ofrece una plataforma en la que los usuarios pueden desarrollar, probar, implementar y 
+            administrar aplicaciones sin tener que preocuparse por la infraestructura subyacente. Ejemplos de PaaS son servicios como AWS Elastic Beanstalk y Google Firebase.
+
+    ## IaaS (Infrastructure as a Service)
+        # Es un modelo de distribución de infraestructura informática en el que el proveedor ofrece recursos informáticos, como servidores, almacenamiento y redes, como un 
+          servicio a través de internet. Los usuarios acceden a estos recursos a través de una interfaz en línea y pueden utilizarlos para desplegar y ejecutar aplicaciones
+          y servicios sin tener que preocuparse por la adquisición ni por el mantenimiento de la infraestructura física. Ejemplos de IaaS son servicios como AWS EC2 y DigitalOcean.
+
+    
+### Cookies y sesiones
+
+    ## Las cookies y sesiones son una tecnología utilizada par almacenar información de los usuarios y luego reconocerles, para brindarles mejores experiencias.
+
+    ## Las cookies permiten almacenar información importante. Datos como de qué país se conectan, o preferencias como el idioma, o datos de usuario.
+
+    ## Funcionan de navegador a servidor:
+
+        # Como cliente (navegador) nos conectamos al servidor.
+
+        # Desde el servidor reconocemos al usuario que está entrando y generamos una cookie con ciertas indicaciones de seguridad y la devolvemos para que el navegador comience a 
+            trastrearla y la guarde. Así el servidor puede verificar la información en la cookie e identificar a ese usuario.
+
+        # Al estar la cookie almacenada del lado del cliente, al volverse a conectar, el servidor identifica la cookie y va a recordar para retornar una respuesta más apropiada.
+
+        # Las cookies solo sirven entre navegador y servidor, no es compatible con móviles.
+
+        # JWT (Json Web Tokens) es una tecnología que nos permite validar por medio de tokens las mismas características que las cookies pero en dispositivos móviles. Funciona 
+            tanto en dispositivos móviles como navegadores.
+
+
+### Bases de datos 
+    ## Una base de datos es una herramienta para recopilar y organizar información. Las bases de datos  pueden almacenar información sobre personas, productos, pedidos u otras 
+    cosas. Muchas bases de datos comienzan como una lista en una hoja de cálculo o en un programa de procesamiento de texto. 
+        
+    ## Existen dos tipos de bases de datos: Relacionales y No Relacionales.
+
+        # Relacionales (SQL): Se caracterizan por ser creadas con tablas que relaciona los datos con otros. usa SQL (Structured Query Language) que es un lenguaje de computación
+             para trabajar con conjuntos de datos y las relaciones entre ellos. Ejemplos:
+
+            # MySQL
+            # PostgreSQL
+            # ORACLE
+            # Microsoft SQL Server
+
+            # Al trabajar todos con SQL, los frameworks aprovechan para trabajar con ORMS Object-Relational Mapping, que es una forma de abstraer la conexión a estas bases de datos,
+              utilizando la POO (Programación Orientada a Objetos.) .
+        
+        # No Relacionales (No SQL): Una base de datos no relacional es aquella que no usa el esquema tabular de filas y columnas que se encuentra en la mayoría de los sistemas de base
+             de datos más tradicionales. en vez de SQL, usa un formato JSON o parecido. Ejemplos:
+             
+             # MongoDB
+             # Cassandra(Apache)
+             # Couchbase
+
+    ## CUIDADO CON LOS SERVICIOS DE BASES DE DATOS:
+        # porque es donde está toda la información delicada de nuestros usuarios. Por medio de los drivers el backend se comunica con las bases 
+        de datos. También es importante tener en cuenta que el desarrollador backend no es quien administra el mantenimiento de las bases de datos, no gestiona backups, sincronización, 
+        etc, ésto lo hace el DB Admin. Sino que éste construye la lógica para consumir éste servicio por medio de los drivers.
+
+    ## Proveedores de DB Administration:
+        # Ofrecen servicios para administrar las bases de datos en diferentes bases de datos y éstos cobran de acuerdo al servicio y puede salir más economico que crear un equipo para
+            administrar toda nuestras bases de datos. Algunos son:
+        
+            # Heroku.
+            # Firebase
+            # Digital Ocean
+            # Mongo Atlas
+            # Couchbase Capella DBaaS
+
+
+### ¿Qué es el escalamiento?
+
+    ## Escalamiento vertical.
+
+        # Es cuando tenemos un servidor y eventualmente el servidor empieza a colapsar, una forma de solucionar el problema es incrementar:
+
+            # CPU
+            # RAM
+            #DISK
+        
+        # Desventajas:
+
+            # Costos
+            # En un black friday tu puedes escalar la aplicacion, pero algunos provedores no permiten desescalar.
+            # Disponibilidad --> Solucion, Escalamiento Horizontal
+
+    ## Escalamiento horizontal
+
+        # Soluciona el problema de la disponibilidad. Se tienen varias instancias del mismo servidor. Como se tienen distintos servidores ahora se necesita de un LOAD BALANCER
+
+        # LOAD BALANCER: Tiene conocimiento de nuestras instancias/servidores (al conjunto de servidores se denomina Clouster). Si un nodo(instancia) se cae, el load balancer 
+            se encarga de desviarla. Distribuye las peticiones.
+
+        # Si tenemos la base de datos local en cada servidor va haber un problema dado que no se tienen sincronizados los datos de las distintas bases de datos de los servidores.
+             SOLUCION Gestionar la base de datos fuera de estos servidores. Quizas como un servidor aparte que sirva como DB.
+
+
+### ¿Qué es la replicación?
+
+    ## La replicación es un proceso mediante el cual se crean y mantienen copias idénticas de datos o componentes de un sistema en diferentes ubicaciones. Este proceso tiene varios 
+        propósitos, como mejorar la disponibilidad, la confiabilidad y el rendimiento de una aplicación o sistema. En el contexto de las bases de datos, la replicación implica 
+        copiar y distribuir datos y objetos desde una base de datos a otra, con el fin de mantener la coherencia entre ellas. Esto se logra sincronizando periódicamente las bases 
+        de datos para asegurarse de que reflejen los mismos datos actualizados. La replicación es una técnica fundamental en la gestión de datos distribuidos y en la implementación 
+        de sistemas tolerantes a fallos.
+
+    ## En la replicación se deja un nodo de solo lectura o consultas y otro u otros de manipulación de datos, actualizar, crear, borrar, así se evita el colapso en la base de datos 
+        cuando hay muchos procesos al tiempo. 
+
+
+### ¿Qué es la caché?
+
+    ## Es un espacio en memoria en base de datos que almacena los datos repetitivos de una navegación cotidiana del usuario en una aplicación, sitio web, etc. . Esto va a posibilitar
+         mejor el perfomance de carga de la plataforma y poder entregar recuersos rápidos y efecicientes a la hora de recibir las peticiones del cliente. 
+
+    ## Ideal para:
+        # Plataformas Eccommerce.
+        # Blogs y sitios web de informativos.
+        # Sitio web de servicios de consulta estáticos.
+
+    ## No ideal para:
+        # Realtime applications como LiveChats.
+
+    ## La Caché es usual trabajar con ella en producción, más no recomnedable trabajar en modo desarrollo, ya que necesitamos ver los cambios en tiempo real.
+
+
+### Cola de tareas 
+
+    ## Un sistema de colas en backend es una estructura de datos que almacena tareas pendientes para ser procesadas. Estas tareas pueden ser cualquier cosa, desde procesamiento de 
+        datos hasta envío de correos electrónicos o actualizaciones de bases de datos. El sistema de colas procesa las tareas en orden de llegada, lo que permite que el backend 
+        maneje varias tareas simultáneamente y mejora la escalabilidad y el rendimiento. También permite la retención de tareas en caso de fallas o interrupciones en el sistema.
+
+    ## ¿Por qué se necesita un sistema de colas?
+
+        # Manejo de alta concurrencia: Un sistema de colas permite manejar una gran cantidad de peticiones simultáneas al procesar varias tareas a la vez, lo que mejora el 
+           rendimiento y la escalabilidad del sistema.
+        
+        # Procesamiento asíncrono: Un sistema de colas permite que las tareas se procesen de manera asíncrona, lo que significa que el cliente puede recibir una respuesta 
+           inmediata mientras que la tarea se procesa en segundo plano.
+
+        # Tolerancia a fallas: Un sistema de colas permite retener las tareas en caso de fallas en el sistema, lo que garantiza que las tareas se procesen una vez que el sistema 
+           vuelve a estar disponible.
+
+        # Priorización de tareas: Un sistema de colas permite priorizar las tareas de acuerdo a la importancia o urgencia, lo que garantiza que las tareas críticas se procesen primero.
+
+        # Desacoplamiento de procesos: Un sistema de colas permite desacoplar diferentes procesos en el sistema, lo que permite escalar cada proceso de manera independiente y mejora la 
+           flexibilidad del sistema.
+
+        # un ejemplo es RabbitMQ, Alternativas modernas: Kafka, NATS, Redis Streams, pero RabbitMQ sigue siendo uno de los más usados cuando quieres confiabilidad y sencillez.
+
+
+### Server-Side Rendering
+
+    ## En qué consiste el Server-Side Rendering (SSR)?
+
+        # Es un enfoque de renderizado en el que se procesa y genera completamente el HTML en el servidor, antes de enviarlo al navegador del cliente.
+
+    ## ¿Cómo se compara el Server-Side Rendering con el Client-Side Rendering (CSR)?
+
+        # El SSR, el HTML lo genera el servidor
+
+        # El CSR, la aplicación y el HTML se generan en el navegador del cliente utilizando JavaScript y el DOM.
+
+    ##  ¿Qué es la técnica de Rehydration y en qué consiste?
+
+        #  Es una técnica que combina características de SSR y CSR. En el Rehydration, se aprovecha el HTML y los datos renderizados desde el servidor, y luego se "hidrata" o complementa
+             con una aplicación JavaScript que se ejecuta en el navegador.
+
+    ##  ¿Qué es Prerendering y cómo funciona?
+
+        # El Prerendering es una técnica de renderizado web que implica generar y renderizar una página web completa en el servidor antes de que un usuario realice una solicitud. Esto significa 
+            que las páginas web se crean de antemano, y los resultados se almacenan en forma de archivos HTML estáticos que se pueden entregar de inmediato cuando se solicitan.
+
+    ## ¿Cuáles son las ventajas de utilizar Server-Side Rendering (SSR)?
+
+        # Mejora el SEO (Motores de búsqueda)
+        # Carga más rápida de la página
+        # Mejora el rendimiento en dispositivos de baja potencia
+        # Mayor compatibilidad
+        # Mayor seguridad
+
+    ## ¿En qué situaciones es especialmente útil el Server-Side Rendering (SSR)?
+
+        # En una indexación SEO(Search Engine Optimization) efectiva, lograr que las páginas de tu sitio web sean descubiertas, entendidas y agregadas correctamente al índice de Google
+             (u otros buscadores), de forma que puedan aparecer en los resultados de búsqueda cuando alguien busca contenido relacionado.
+
+        # Una carga rápida de la página
+
+        # Rendimiento en dispositivos de baja potencia
+
+        # Mayor seguridad en la manipulación de datos y autenticación.

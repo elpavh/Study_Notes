@@ -1,0 +1,114 @@
+### Desarrollo de Apps Multiplataforma con Flower de Google
+
+    ## ¿Qué es Flutter y por qué es útil?
+        # lutter permite desarrollar aplicaciones para iOS, Android y web usando un único código base. 
+        Sus ventajas principales incluyen:
+            # Hot reload: visualiza tus cambios en tiempo real sin necesidad de largas compilaciones.
+            # Lenguaje de programación simple: ideal tanto para principiantes como para expertos.
+            # Desarrollo modular: basado en widgets que puedes personalizar, configurar y reutilizar.
+
+    ## ¿Cómo se siente programar con Flutter?
+        # El proceso se asemeja a construir con bloques de lego. Los widgets actúan como bloques fundamentales para:
+            # Diseñar interfaces personalizadas.
+            # Reutilizar componentes, lo que ahorra tiempo.
+            # Mantener un desarrollo ágil y eficiente.
+
+    ## ¿Qué aplicación puedes crear con Flutter?
+        # Un ejemplo práctico es una app de recetas, diseñada para iOS y Android, con las siguientes características:
+            # Pantalla principal (Home): lista de recetas obtenida de una API.
+            # Favoritos: opción para agregar o eliminar recetas, con actualizaciones instantáneas.
+            # Detalle de receta: muestra información específica de cada receta.
+            # Formulario validado: permite ingresar y gestionar datos.
+
+    ## ¿Cómo desplegar tu aplicación?
+        # Una vez desarrollada, puedes publicar tu app en la Play Store, acercándola a millones de usuarios potenciales.
+
+
+### Programación en Dart: Variables, Funciones y Clases Básicas
+
+    ## En Dart, todo es un objeto y todas las clases heredan de la clase Object, lo que simplifica la estructura y potencia la
+     reutilización de código. Aprender cómo manejar variables, constantes, funciones y clases en este lenguaje es fundamental 
+     para aprovechar su capacidad en aplicaciones robustas.
+
+    ## ¿Cómo se definen las variables en Dart?
+
+        # Dart permite tipado dinámico con var, aunque también es posible especificar tipos específicos.
+        # dynamic se utiliza cuando se espera que el tipo de dato cambie en el futuro.
+            # Ejemplo de definición:
+                # var nombre = 'Alison';
+                # String nombreEspecifico = 'Alison';
+                # dynamic variable = 'Alison';
+                # variable = 123; // Esto está bien
+                # variable = true; // También está bien
+
+    ## ¿Qué diferencias existen entre const y final?
+
+        # const asigna valores en tiempo de compilación y es inmutable.
+        # final asigna valores en tiempo de ejecución, útil cuando se desconoce el valor final hasta el momento de la ejecución.
+        # Ejemplo de uso:
+            # final nombre = 'Daniela';
+            # const nickname = 'Dani';
+
+    ## ¿Qué tipos de datos ofrece Dart?
+
+        # Números: Representados por int y double.
+            # int x = 10; double y = 20.67;
+
+        # Strings: Permiten cadenas de texto simples y multilínea.
+            # String palabra = "texto simple";
+            # String multilinea = '''texto
+                multilínea''';
+
+        # Booleanos: true o false.
+            # bool teGustaDart = true;
+
+        # Listas: Colección de elementos ordenados.
+            # var lista = [1, 2, 3];
+
+        # Mapas: Estructura clave-valor.
+            # var dias = { 'Lu': 'Lunes', 'Ma': 'Martes' };
+
+    ## ¿Cómo se definen funciones en Dart?
+        # Las funciones pueden recibir parámetros y devolver datos específicos. Ejemplo de función básica:
+            # void myFunction(param1, param2) {// lógica de la función}
+    
+        # La función main() es el punto de entrada de una aplicación en Dart.
+
+    ## ¿Qué estructuras de control existen en Dart?
+        # Dart soporta estructuras de control como:
+            # if y else
+            # for y while
+            # switch y case // Además, permite el uso de break, continue, y assert para control y validación.
+
+    ## ¿Cómo se manejan las excepciones?
+        # Dart permite manejar errores con throw para lanzar excepciones y try-catch para capturarlas:
+            # try { // código que puede fallar } catch (e) { // manejar error }
+
+    ## ¿Cómo se crean clases y constructores?
+        # Las clases en Dart se definen con class, y pueden tener constructores para inicializar variables.
+            # class Point { num x, y; Point(this.x, this.y); }
+
+    ## ¿Qué es la herencia en Dart?
+        # Dart permite que una clase herede de otra usando extends.
+            # class Television {void turnOn() {...} }
+            # class SmartTelevision extends Television {
+            #   void turnOn() { super.turnOn(); // logica adicional   }   }
+    
+    ## ¿Cómo se realiza la sobrescritura de métodos?
+        # Dart permite la sobrescritura de métodos heredados usando @override.
+            # class SmartTelevision extends Television {
+            #   @override
+            # void turnOn() {// nueva implementación  } }
+
+    ## ¿Qué es un enum en Dart?
+        # enum define un conjunto de constantes con nombre.
+            # enum Color { red, green, blue }
+
+    ## Ver mas...
+        # https://dart.dev/language
+        # https://pub.dev/packages?q=supabase                                                                                                                                                                                                                      
+
+
+### 
+
+

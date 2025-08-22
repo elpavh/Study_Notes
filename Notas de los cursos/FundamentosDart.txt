@@ -1,0 +1,18 @@
+### Variables
+
+    ## Tipos de Variables
+
+        # int --> Numeros enteros
+        # double --> numeros decimales
+        # String --> cadenas de texto
+        # bool --> valores booleanos (true o false)
+
+    ## Palabras Reservadas
+
+        # var --> Dart infiere el tipo de dato
+        # final --> valor final, puede cambiar en tiempo de ejecucion
+        # const --> constante, no puede cambiar en tiempo de ejecucion
+        # late --> para variables declaradas sin un valor asignado
+
+
+### Operadores 
