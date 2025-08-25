@@ -418,7 +418,7 @@
             # ..nombre = "Pako"
             # ..botas = true
             # ..habla(); }
-
+ 
     ## Clases abstractas: Podemos definir clases abstractas, es decir, clases que permiten a sus clases hijas redefinir sus 
     miembros y sus funciones. Basta con agregar la palabra abstract antes de la palabra class y el nombre de la clase.
 
