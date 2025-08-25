@@ -24,11 +24,11 @@ void main() {  // void es un tipo de retorno que indica que la funcion no devuel
   // var (tipo inferido)
   var ciudad = "Madrid"; // Dart infiere que es String
   print("Ciudad: $ciudad");
-  var variableDinamica; // var sin inicializar es dynamic lo que permite cambiar de tipo y valor
-  variableDinamica = 100;
-  print("Variable dinámica con var: $variableDinamica");
+  var variableDinamica2; // var sin inicializar es dynamic lo que permite cambiar de tipo y valor
+  variableDinamica2 = 100;
+  print("Variable dinámica con var: $variableDinamica2");
   variableDinamica = "Ahora soy un String";
-  print("Variable dinámica con var ahora es: $variableDinamica");
+  print("Variable dinámica con var ahora es: $variableDinamica2");
 
   String? textoNulo; // Variable que puede ser nula
   print("Texto nulo: $textoNulo"); 
