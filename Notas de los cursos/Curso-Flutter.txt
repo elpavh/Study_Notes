@@ -106,9 +106,235 @@
 
     ## Ver mas...
         # https://dart.dev/language
-        # https://pub.dev/packages?q=supabase                                                                                                                                                                                                                      
+        # https://pub.dev/packages?q=supabase          
+
+    ## Formater: selecciona todo el codigo y da click derecho en donde dice Format Selection, y se selecciona 
+       en dar para este caso...                                                                                                                                                                                                    
 
 
-### 
+### Creación de Widgets Stateless en Flutter para Recetario Interactivo
+
+    ## ¿Cómo crear y estructurar un StatelessWidget?
+
+        # Definición de la clase: Crea una nueva clase que extienda de StatelessWidget. Por ejemplo:
+            # class RecipeBook extends StatelessWidget {
+            # @override
+            # Widget build(BuildContext context) {
+            # return Scaffold();   } }
+            # //Scaffold actúa como una hoja en blanco donde añadimos elementos.
+
+        # Personalización inicial: Añade propiedades clave como:
+            # AppBar: para mostrar un título y definir colores.
+            # Body: La sección principal de la pantalla donde se colocan los widgets.
+            # Drawer: Un menú lateral que se desliza desde el borde izquierdo.
+            # BottomNavigationBar: Una barra de navegación en la parte inferior de la pantalla.
+            # FloatingActionButton (FAB): Un botón flotante que suele usarse para acciones importantes.
+            # SnackBar: Mensajes emergentes que se muestran en la parte inferior de la pantalla.
+
+    ## ¿Cómo personalizar la barra superior con AppBar?
+        
+        # La barra superior se personaliza utilizando la propiedad AppBar. Ejemplo:
+            # return Scaffold(
+            #  appBar: AppBar(
+            #   title: Text(
+            #    'Mi Recetario',
+            #    style: TextStyle(color: Colors.white),// TextStyle
+            #     ),// text
+            #   backgroundColor: Colors.orange,
+            #    ), // AppBar
+            #    ); // Scafold
+
+            # La propiedad title define el texto visible.
+            # TextStyle permite modificar el color, tamaño y estilo del texto.
+            # backgroundColor define el color de fondo del AppBar.
+
+    ## ¿Cómo eliminar marcas de depuración y warnings?
+
+        # Eliminar la marca de depuración: Ajusta la propiedad debugShowCheckedModeBanner a false en MaterialApp.
+
+            # return MaterialApp( debugShowCheckedModeBanner: false, home: RecipeBook(), );
+
+            # Ocultar warnings temporales: Si no afectan el desarrollo actual, coméntalos en el archivo analysis_options.yaml con #.
+    
+    ## ¿Qué buenas prácticas seguir al construir widgets?
+
+        # Define widgets constantes si sus datos no cambiarán:
+            # const Text('Constante');
+        # Usa la estructura jerárquica de widgets para mantener el código organizado.
+        # Personaliza propiedades como colores y estilos para mejorar la experiencia visual.
+
+    ## ¿Cómo probar la implementación en el emulador?
+        # Guarda los cambios en el archivo main.dart.
+        # Observa en el emulador cómo se reflejan las personalizaciones.
+        # Ajusta y mejora según el comportamiento observado.
 
 
+### Widgets Esenciales en Flutter: Container, Row, Column y Text
+
+    ## Cómo estructurar el cuerpo de tu aplicación en Flutter?
+        # Antes de agregar widgets, es esencial formatear el código para visualizar la jerarquía correctamente. Usa un 
+          formatter, selecciona Dart y observa la disposición en cascada de los widgets.
+
+        # Inicia con un widget Container. Es una caja flexible que puede contener otros widgets, personalizable con 
+        propiedades como:
+            # Padding y margin: Para espaciar elementos.
+            # Border y color: Para estilos visuales.
+            # Box model: Define el diseño y estructura.
+
+    ## ¿Cómo crear tarjetas con información?
+
+        # Usa Container para estructurar las tarjetas:
+            # Divide las tarjetas en dos secciones: una para la imagen y otra para el texto.
+            # Agrega un widget Row para alinear los elementos horizontalmente.
+
+        # Configura la imagen:
+            # Crea un Container con propiedades de tamaño (height y width).
+            # Aplica el widget ClipRRect para bordes redondeados con la propiedad borderRadius.
+
+        # Organiza el contenido textual:
+            # Utiliza un widget Column para colocar elementos en una disposición vertical.
+            # Añade texto con Text, como el nombre de la receta y el autor.
+            # Usa un Container con un color (ej. naranja) para añadir una línea separadora decorativa.
+
+    ## ¿Cómo agregar espaciado y adaptabilidad?
+        
+        # Espaciado: Incorpora SizedBox para separar elementos horizontal o verticalmente según el contexto (width o height). 
+        # Adaptabilidad: Implementa MediaQuery para ajustar el tamaño de los widgets según la pantalla del dispositivo, 
+        especialmente útil para diseños responsive.
+
+    ## ¿Qué prácticas facilitan el desarrollo en Flutter?
+
+        # Formatea el código constantemente para mantener la jerarquía clara.
+        # Experimenta con diferentes widgets como Row, Column y Text para dominar su comportamiento.
+        # Utiliza propiedades como MediaQuery para diseños flexibles y adaptables.
+
+
+### Estructuración y Navegación de Pantallas en Flutter
+
+    ## ¿Cómo estructurar las pantallas de tu aplicación?
+
+        # Crea una carpeta específica: Dentro de tu proyecto, organiza tus pantallas en una nueva carpeta llamada screens.
+      
+        # Configura una pantalla inicial: Crea un archivo como home_screen.dart para tu pantalla principal.
+        
+        # Usa la convención UpperCamelCase: Al nombrar clases como HomeScreen, asegúrate de respetar esta convención para 
+          mantener la legibilidad.
+
+    ## ¿Cómo mover componentes del main a la pantalla principal?
+
+        # Identifica los componentes existentes: Ubica elementos como contenedores en el archivo principal main.dart.
+
+        # Reubica los widgets al nuevo archivo: Transfiere estos componentes al archivo de la pantalla principal 
+          (home_screen.dart), utilizando el widget Scaffold para estructurarlos.
+
+    ## ¿Cómo implementar una barra de navegación con pestañas? 
+
+        # Agrega un AppBar con TabBar: Incluye una barra de navegación inferior (TabBar) dentro de tu AppBar.
+        # Configura pestañas iniciales:
+            # Usa widgets de Icon para representar visualmente las pestañas.
+            # Agrega texto descriptivo con el widget Text.
+        # Utiliza un TabBarView: Define un TabBarView para que las pestañas muestren diferentes pantallas.
+
+    ## ¿Cómo solucionar errores al configurar el TabBar?
+
+        # Envuelve el Scaffold con un controlador: Usa el widget DefaultTabController para manejar las pestañas.
+        # Configura propiedades adicionales:
+            # Ajusta el indicador de la pestaña activa con un color distintivo.
+            # Personaliza el texto con colores para estados seleccionados y no seleccionados.
+        # Gestiona errores en el emulador: Si surgen problemas al guardar, refresca el proyecto desde la línea final para 
+          aplicar cambios correctamente.
+
+    ## ¿Qué más puedes personalizar en tu TabBar?
+        # Añade más pestañas: Amplía tu navegación agregando más pantallas al listado de pestañas.
+        # Optimiza el diseño:
+            # Define un máximo de pestañas visibles.
+            # Configura colores consistentes con el tema de tu aplicación.
+
+
+### Estructuración y Navegación de Pantallas en Flutter resumen
+
+    ## Entendiendo la Estructura de un Proyecto Flutter
+
+        # lib/main.dart: Es el archivo principal donde comienza tu app. Aquí defines la estructura básica de tu aplicación.
+        # void main() { runApp(MyApp()); }
+        # Carpetas Comunes:
+            # android y ios: Contienen los archivos específicos para cada plataforma, como configuraciones de permisos y gradle.
+            # pubspec.yaml: Archivo donde defines:
+                # Paquetes: Dependencias externas para tu proyecto.
+                # Fuentes y Recursos: Como imágenes y fuentes personalizadas.
+
+    ## Widgets Básicos en Flutter: los widgets son bloques fundamentales de construcción en Flutter. Todo lo que ves en 
+    pantalla es un widget.
+        # Scaffold: La base para crear una pantalla con estructura estándar (AppBar, Body, etc.).
+            # Scaffold( appBar: AppBar(title: Text('Mi App')), body: Center(child: Text('Hola Flutter!')), )
+
+        # Container: Un widget versátil para diseño, con propiedades como color, padding, y margin.
+            # Container( 
+            # padding: EdgeInsets.all(16), 
+            # margin: EdgeInsets.all(8), 
+            # color: Colors.blue,
+            # child: Text('Soy un Container'), )
+        
+        # Text: Muestra texto en pantalla con personalización.
+            # Text( 'Hola Mundo!', style: TextStyle(fontSize: 24, color: Colors.black), )
+
+        # Row y Column: Sirven para organizar widgets horizontal (Row) o verticalmente (Column).
+            # Column( mainAxisAlignment: MainAxisAlignment.center, children: [Text('Fila 1'), Text('Fila 2')], )
+
+        # ListView: Para listas desplazables dinámicas o estáticas.
+            # ListView( 
+            #    children: [
+            #    ListTile(title: Text('Elemento 1')), 
+            #    ListTile(title: Text('Elemento 2')), ], )
+
+    ##  ¿Qué es el Árbol de Widgets en Flutter?
+
+        # Un árbol de widgets es la representación visual de tu interfaz en Flutter. Los widgets están organizados en 
+         una jerarquía donde cada widget es un nodo que puede contener otros widgets. Ejemplo: 
+            # MaterialApp └── Scaffold ├── AppBar └── Body └── Center └── Text
+            # Cada widget en este árbol se encarga de una parte específica de la pantalla.
+
+        #  Más información sobre el Árbol de Widgets: keepcoding.io
+
+
+### Creación y Personalización de Widgets en Flutter
+
+    ## ¿Cómo reutilizar widgets en nuestra aplicación?
+        # Crea un widget personalizado para las tarjetas, nombrándolo, por ejemplo, ReceipesCart. Este widget debe incluir 
+          un BuildContext para heredar las propiedades de la aplicación principal.
+
+        # Incluye la estructura de la tarjeta (como un Container) dentro del widget, asegurándote de usar un return para 
+          devolverlo.
+
+        # Una vez definido, puedes usar este widget en cualquier parte de tu pantalla, como en el HomeScreen, y reutilizarlo 
+          tantas veces como sea necesario.
+
+    ## ¿Qué ajustes de espaciado y padding se pueden hacer?
+        # Utiliza PADDING para ajustar el espaciado alrededor de las tarjetas. Esto puede configurarse con valores 
+           predeterminados o personalizados usando propiedades como left, top, right y bottom.
+
+        # Si los elementos dentro de las tarjetas están demasiado juntos, usa widgets como SizedBox para crear separación 
+          adicional, por ejemplo:
+            # Cuatro píxeles entre el título y el autor.
+            # Cuatro píxeles entre el nombre y otros elementos.
+
+    ## ¿Cómo alinear y centrar elementos en una tarjeta?
+        # Para alinear verticalmente, usa MainAxisAlignment con valores como center dentro de un widget Column.
+
+        # Para alinear horizontalmente, emplea CrossAxisAlignment configurado como start para que los elementos queden al inicio.
+
+        # Estos ajustes aseguran que los componentes de la tarjeta se vean organizados y equilibrados.
+
+    ## ¿Qué estilos se pueden agregar al texto?
+        # Usa la propiedad style en widgets de texto para definir:
+            # Tamaño de fuente (fontSize), por ejemplo, 16 puntos.
+            # Tipografía personalizada, como Quicksand, importándola desde Google Fonts.
+
+        # Aplica estos estilos de manera consistente en todos los textos de la tarjeta, como en el título y el autor.
+
+    ## ¿Cómo mejorar la apariencia de las tarjetas con contenedores?
+        # Añade un BoxDecoration a los Container para personalizar su aspecto:
+            # Usa colores temporales como naranja para previsualizar el diseño.
+            # Añade bordes redondeados con la propiedad BorderRadius, ajustando su tamaño según sea necesario.
+
+        # Estas propiedades no solo mejoran el diseño, sino que también permiten visualizar dónde irán las imágenes y otros elementos.
