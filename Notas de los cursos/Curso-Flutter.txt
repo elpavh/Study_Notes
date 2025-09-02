@@ -23,6 +23,7 @@
     ## ¿Cómo desplegar tu aplicación?
         # Una vez desarrollada, puedes publicar tu app en la Play Store, acercándola a millones de usuarios potenciales.
 
+    ## https://docs.flutter.dev/cookbook
 
 ### Programación en Dart: Variables, Funciones y Clases Básicas
 
@@ -338,3 +339,196 @@
             # Añade bordes redondeados con la propiedad BorderRadius, ajustando su tamaño según sea necesario.
 
         # Estas propiedades no solo mejoran el diseño, sino que también permiten visualizar dónde irán las imágenes y otros elementos.
+
+
+### Configuración de Imágenes en Flutter: Uso de Carpeta Assets
+
+    ## ¿Cómo configurar la carpeta de imágenes en Flutter?
+        # Accede al archivo pubspec.yaml de tu proyecto.
+        # Desplázate hacia el final del archivo hasta la sección de assets.
+        # Comenta las indicaciones predeterminadas y agrega una nueva ruta:
+            # assets:
+            #  - assets/imagenes/
+        # Crea una carpeta llamada assets en la raíz de tu proyecto y, dentro de ella, otra llamada imagenes.
+        # Guarda tus imágenes dentro de esta carpeta. Ahora puedes acceder a estas imágenes desde cualquier widget de tu proyecto.
+
+    ## ¿Cómo agregar imágenes al recetario?
+        # Modifica el widget Container de tu recetario.
+        # Cambia la propiedad child para incluir un widget Image.
+        # Si usas imágenes desde URLs, utiliza Image.network. Por ejemplo:
+            # child: Image.network( 'https://link-a-tu-imagen.com/lasagna.jpg', fit: BoxFit.cover, ),
+        # Guarda el archivo y verifica que las imágenes se visualicen correctamente.
+
+    ## ¿Cómo ajustar las imágenes al contenedor?
+        # Usa la propiedad fit con el widget BoxFit para definir cómo la imagen se adapta al contenedor
+            # Ejemplo: BoxFit.cover hará que la imagen rellene completamente el contenedor ajustándose con un ligero zoom.
+        # Otras opciones útiles incluyen
+            # BoxFit.contain para mantener las proporciones sin recortar.
+            # BoxFit.fill para estirar la imagen y cubrir el espacio.
+
+    ## ¿Cómo organizar y limpiar tu código?
+        # Selecciona todo el código y dirígete a la opción View en el editor.
+        # Activa la opción Word Wrap o utiliza el atajo Alt + Z para ajustar el texto dentro de la pantalla.
+        # Esto mejora la legibilidad y facilita futuras modificaciones.
+
+
+### Creación de Formularios y Botones Interactivos en Aplicaciones
+
+    ## ¿Cómo implementar un botón con acción personalizada?
+        # Usa un Floating Action Button: Este widget se utiliza para acciones principales. Puedes asignarle un 
+        'onPressed' que ejecutará una función cuando se presione.
+        # Personalización del botón:
+            # Color: Define colores que resalten, como un naranja de tu paleta.
+            # Íconos: Agrega íconos clicables y coloréales, por ejemplo, en blanco, para diferenciarlos del fondo.
+
+    ##  Código básico:
+                        FloatingActionButton(
+                        onPressed: () {
+                            // Lógica a ejecutar
+                        },
+                        backgroundColor: Colors.orange,
+                        child: Icon(Icons.add, color: Colors.white),
+                        ),
+
+    ## ¿Cómo mostrar un formulario en un modal?
+        # ShowModalBottomSheet: Permite mostrar un contenedor flotante desde la parte inferior de la pantalla.
+        # Configuración inicial: 
+            # Altura dinámica: Usa MediaQuery.of(context).size para adaptar el tamaño al ancho de la pantalla.
+            # Decoración: Aplica colores, contenedores y texto para estructurar el contenido.
+
+        # Ejemplo:
+                            void showModal(BuildContext context) {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (BuildContext context) {
+                                return Container(
+                                    height: MediaQuery.of(context).size.height * 0.5,
+                                    color: Colors.white,
+                                    child: Center(child: Text('Hola, aquí va tu formulario')),
+                                );
+                                },
+                            );
+                            }
+
+    ## ¿Cómo estructurar un formulario con campos reutilizables?
+        # Crea una clase de formulario: Utiliza un StatelessWidget para estructurar tu formulario.
+        # Formulario dinámico:
+            # Usa Form con una clave (formKey) para manejar validaciones y control de campos.
+            # Estructura los campos en columnas para una alineación vertical.
+
+    ## Ejemplo de formulario básico:
+
+                                class RecipeForm extends StatelessWidget {
+                                final _formKey = GlobalKey();
+
+                                @override
+                                Widget build(BuildContext context) {
+                                    return Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Form(
+                                        key: _formKey,
+                                        child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                            Text('Nueva Receta', style: TextStyle(fontSize: 24, color: Colors.orange)),
+                                            SizedBox(height: 16),
+                                            buildTextField('Nombre de la receta'),
+                                        ],
+                                        ),
+                                    ),
+                                    );
+                                }
+
+                                Widget buildTextField(String label) {
+                                    return TextFormField(
+                                    decoration: InputDecoration(
+                                        labelText: label,
+                                        labelStyle: TextStyle(color: Colors.orange),
+                                        enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(color: Colors.orange, width: 1),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(color: Colors.orange, width: 1.5),
+                                        ),
+                                    ),
+                                    );
+                                }
+                                }
+
+
+    ##  ¿Cómo personalizar widgets para reutilización?
+        # Define widgets específicos: Crea widgets para campos de texto que incluyan estilos y validaciones comunes.
+        # Propiedades importantes:
+            # label: Texto para identificar el campo.
+            # InputDecoration: Define bordes, colores y estilos.
+            # BorderRadius: Redondea los bordes para un diseño más moderno.
+
+    ## Widget de campo reutilizable:
+
+                    Widget buildCustomTextField(String label, String fontFamily) {
+                    return TextFormField(
+                        decoration: InputDecoration(
+                        labelText: label,
+                        labelStyle: TextStyle(fontFamily: fontFamily, color: Colors.orange),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.orange, width: 1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.orange, width: 1.5),
+                        ),
+                        ),
+                    );
+                    }
+
+        # Agrega campos al formulario:
+                            Column(
+                            children: [
+                                buildCustomTextField('Nombre del autor', 'QuickSand'),
+                                SizedBox(height: 16),
+                                buildCustomTextField('Ingredientes', 'QuickSand'),
+                                SizedBox(height: 16),
+                                buildCustomTextField('Imagen URL', 'QuickSand'),
+                            ],
+                            )
+
+
+
+### Controladores y Validación de Formularios en Flutter
+
+    ## ¿Cómo añadir campos personalizados al formulario?
+        # Los campos requeridos son: nombre, autor, URL de imagen y descripción de la receta.
+        # Para cada campo, se utiliza un TextEditingController que permite capturar y almacenar los datos ingresados.
+        # La estructura base incluye etiquetas (label) y controladores asignados de manera única para cada campo.
+
+    ## ¿Cómo implementar validaciones en los formularios?
+        # Se usa un GlobalKey<FormState> para manejar el estado del formulario.
+        # Los validadores son funciones asociadas a cada campo, verificando si este está vacío o contiene datos incorrectos.
+        # Ejemplo de validación:
+            # Si el campo de nombre está vacío, se muestra el mensaje: “Introduzca el nombre de la receta”.
+            # En caso contrario, la validación pasa y el formulario continúa.
+
+    ## ¿Cómo se conecta la validación con los controladores?
+        # Cada campo del formulario recibe su propio controlador y validador.
+        # La integración de los validadores requiere modificar la widget personalizada, añadiendo parámetros como:
+            # validator: para recibir la función de validación.
+            # maxLines: para definir el número máximo de líneas en campos como la descripción.
+
+    ## ¿Cómo crear un botón funcional y estilizado?
+        # Un botón centrado, implementado con ElevatedButton, maneja el envío del formulario.
+        # Antes de procesar la información, se valida que todos los campos estén llenos.
+        # En caso de éxito, el formulario se cierra con Navigator.pop.
+        # Estilo del botón:
+            # Color de fondo, tipografía en negrita y bordes redondeados.
+            # Texto descriptivo como “Guardar receta”.
+
+    ## ¿Cómo gestionar los campos con múltiples líneas?
+        # Se agrega una variable opcional maxLines para manejar campos que requieran varias líneas, como la descripción de la receta.
+        # Esto permite ajustar dinámicamente la cantidad de texto visible en el formulario.
+
+    ## ¿Cómo verificar que las validaciones funcionan correctamente?
+        # Al probar el formulario, los campos vacíos generan mensajes de error específicos.
+        # Por ejemplo, si no se completa la URL de imagen, se solicita rellenar dicho campo antes de enviar.
